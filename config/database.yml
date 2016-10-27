@@ -24,7 +24,7 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
+test: &test
   <<: *default
   database: rails_engine_demo_test
 
@@ -52,3 +52,6 @@ production:
   database: rails_engine_demo_production
   username: rails_engine_demo
   password: <%= ENV['RAILS_ENGINE_DEMO_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
